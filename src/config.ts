@@ -434,7 +434,6 @@ const store = {
     };
   }),
   showOnlySeries: envOrArray(process.env.SHOW_ONLY_SERIES, [
-    '3060',
     '3060ti',
     '3070',
     '3080',
@@ -443,17 +442,14 @@ const store = {
     'rx6800',
     'rx6800xt',
     'rx6900xt',
-    'ryzen5600',
-    'ryzen5800',
-    'ryzen5900',
-    'ryzen5950',
-    'sf',
-    'sonyps5c',
-    'sonyps5de',
-    'xboxss',
-    'xboxsx',
+  //  'ryzen5900',
+  //  'ryzen5950',
   ]),
-  stores: envOrArray(process.env.STORES, ['amazon', 'bestbuy']).map(entry => {
+  //'ryzen5600',
+  //'ryzen5800',
+  //    '3060',
+  
+  stores: envOrArray(process.env.STORES, ['amazon-nl', 'alternate-nl', 'amazon-de', 'amazon-uk', 'amd-nl','coolblue', 'asus-de']).map(entry => {
     const [name, minPageSleep, maxPageSleep] = entry.match(/[^:]+/g) ?? [];
 
     let proxyList = loadProxyList(name);
